@@ -1,0 +1,2252 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0618.0959                               -->
+<workbook source-build='2019.2.1 (20192.19.0618.0959)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='차원 선택' datatype='string' name='[매개 변수 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;지역&quot;'>
+        <calculation class='tableau' formula='&quot;지역&quot;' />
+        <members>
+          <member value='&quot;지역&quot;' />
+          <member value='&quot;고객 세그먼트&quot;' />
+          <member value='&quot;제품 대분류&quot;' />
+          <member value='&quot;배송 방법&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='주문' inline='true' name='federated.0smajfa0mbpndi1gavzye08oq5xa' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='주문' name='textscan.0j149el01yshd41dpszig17oyry7'>
+            <connection class='textscan' directory='D:/github/Tableau/Hadoop' filename='시트_1_data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='시트_1_data' name='textscan.0xjut6f1cod7s217d0m6u0qm4shb'>
+            <connection class='textscan' directory='D:/github/Tableau' filename='시트_1_data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0xjut6f1cod7s217d0m6u0qm4shb' name='시트_1_data.csv' table='[시트_1_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='레코드 수' ordinal='0' />
+            <column datatype='string' name='고객 세그먼트' ordinal='1' />
+            <column datatype='string' name='고객명' ordinal='2' />
+            <column datatype='string' name='고객번호' ordinal='3' />
+            <column datatype='integer' name='고유 ID' ordinal='4' />
+            <column datatype='string' name='국가' ordinal='5' />
+            <column datatype='real' name='매출' ordinal='6' />
+            <column datatype='string' name='배송 방법' ordinal='7' />
+            <column datatype='date' name='배송 일자' ordinal='8' />
+            <column datatype='integer' name='수량' ordinal='9' />
+            <column datatype='real' name='수익' ordinal='10' />
+            <column datatype='string' name='시군구' ordinal='11' />
+            <column datatype='string' name='시도' ordinal='12' />
+            <column datatype='string' name='제품 대분류' ordinal='13' />
+            <column datatype='string' name='제품 중분류' ordinal='14' />
+            <column datatype='string' name='제품 코드' ordinal='15' />
+            <column datatype='string' name='제품명' ordinal='16' />
+            <column datatype='string' name='주문 번호' ordinal='17' />
+            <column datatype='date' name='주문 일자' ordinal='18' />
+            <column datatype='string' name='지역' ordinal='19' />
+            <column datatype='real' name='할인율' ordinal='20' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>레코드 수</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[레코드 수]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>레코드 수</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고객 세그먼트</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[고객 세그먼트]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>고객 세그먼트</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고객명</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[고객명]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>고객명</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고객번호</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[고객번호]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>고객번호</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고유 ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[고유 ID]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>고유 ID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>국가</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[국가]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>국가</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>매출</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[매출]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>매출</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>배송 방법</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[배송 방법]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>배송 방법</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>배송 일자</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[배송 일자]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>배송 일자</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>수량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[수량]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>수량</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>수익</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[수익]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>수익</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>시군구</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[시군구]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>시군구</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>시도</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[시도]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>시도</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품 대분류</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[제품 대분류]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>제품 대분류</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품 중분류</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[제품 중분류]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>제품 중분류</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품 코드</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[제품 코드]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>제품 코드</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품명</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[제품명]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>제품명</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>주문 번호</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[주문 번호]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>주문 번호</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>주문 일자</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[주문 일자]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>주문 일자</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>지역</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[지역]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>지역</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>할인율</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[할인율]</local-name>
+            <parent-name>[시트_1_data.csv]</parent-name>
+            <remote-alias>할인율</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='2018 매출' datatype='real' name='[2017 매출(복사본)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if year([주문 일자])=2018 then 매출 end' />
+      </column>
+      <column caption='최소 or 최대' datatype='string' name='[Calculation_1252563653660704770]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='if sum(매출)=window_max(sum(매출)) then &apos;최대&apos;&#13;&#10;elseif sum(매출)=window_min(sum(매출)) then &apos;최소&apos;&#13;&#10;else &apos;null&apos;&#13;&#10;end'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='2017 매출' datatype='real' name='[Calculation_1252563653718687748]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if year([주문 일자])=2017 then 매출 end' />
+      </column>
+      <column caption='전년 대비 성장률' datatype='real' default-format='p0.0%' name='[Calculation_1252563653719117829]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(sum([2017 매출(복사본)])-sum([Calculation_1252563653718687748]))/sum([Calculation_1252563653718687748])' />
+      </column>
+      <column aggregation='Sum' caption='배송 기간' datatype='integer' name='[Calculation_1252563653732093958]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='datediff(&apos;day&apos;, [주문 일자], [배송 일자])' />
+      </column>
+      <column caption='차원 선택' datatype='string' name='[Calculation_1252563653733707783]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='case [Parameters].[매개 변수 1]&#13;&#10;when &quot;지역&quot; then [지역]&#13;&#10;when &quot;고객 세그먼트&quot; then [고객 세그먼트]&#13;&#10;when &quot;제품 대분류&quot; then [제품 대분류]&#13;&#10;when &quot;배송 방법&quot; then [배송 방법]&#13;&#10;END' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='매출 구성비율' datatype='real' default-format='p0.00%' name='[계산1]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([매출]) / TOTAL(SUM([매출]))'>
+          <table-calc ordering-type='ColumnInPane' />
+        </calculation>
+      </column>
+      <column caption='매출 순위' datatype='integer' name='[계산2]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='RANK(SUM([매출]))'>
+          <table-calc ordering-type='ColumnInPane' />
+        </calculation>
+      </column>
+      <column datatype='string' name='[고객 세그먼트]' role='dimension' type='nominal' />
+      <column datatype='string' name='[고객명]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[고유 ID]' role='dimension' type='ordinal' />
+      <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+      <column datatype='string' name='[시군구]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='string' name='[시도]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+      <column-instance column='[고객 세그먼트]' derivation='None' name='[none:고객 세그먼트:nk]' pivot='key' type='nominal' />
+      <column-instance column='[2017 매출(복사본)]' derivation='Sum' name='[sum:2017 매출(복사본):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1252563653718687748]' derivation='Sum' name='[sum:Calculation_1252563653718687748:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1252563653660704770]' derivation='User' name='[usr:Calculation_1252563653660704770:nk:2]' pivot='key' type='nominal'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_1252563653719117829]' derivation='User' name='[usr:Calculation_1252563653719117829:qk]' pivot='key' type='quantitative' />
+      <group caption='작업(제품 중분류)' hidden='true' name='[Action (제품 중분류)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[제품 중분류]' />
+        </groupfilter>
+      </group>
+      <group caption='도구 설명(시군구,시도)' hidden='true' name='[Tooltip (시군구,시도)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[시군구]' />
+          <groupfilter function='level-members' level='[시도]' />
+        </groupfilter>
+      </group>
+      <group caption='Top 20' name='[Top 10(복사본)]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='SUM([매출])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[고객명]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <group caption='Top 10' name='[Top 10]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='SUM([매출])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[고객명]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <group caption='top 11-20' delimiter=',' name='[집합 1]' name-style='unqualified'>
+        <groupfilter function='except'>
+          <groupfilter field='[Top 10(복사본)]' function='reference' />
+          <groupfilter field='[Top 10]' function='reference' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='지도'>
+          <field>[지역]</field>
+          <field>[시도]</field>
+          <field>[시군구]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.549909' group-percentage='0.114338' measure-ordering='alphabetic' measure-percentage='0.294011' parameter-percentage='0.0417423' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:고객 세그먼트:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;소비자&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;홈 오피스&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;기업 고객&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Calculation_1252563653660704770:nk:2]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;최대&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;null&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;최소&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:2017 매출(복사본):qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_1252563653718687748:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;South Korea&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='차원 선택' datatype='string' name='[매개 변수 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;지역&quot;'>
+          <calculation class='tableau' formula='&quot;지역&quot;' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='필터 1(생성됨)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='대시보드 1' type='sheet' worksheet='워드클라우드' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='대시보드 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Datediff'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column aggregation='Sum' caption='배송 기간' datatype='integer' name='[Calculation_1252563653732093958]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='datediff(&apos;day&apos;, [주문 일자], [배송 일자])' />
+            </column>
+            <column-instance column='[Calculation_1252563653732093958]' derivation='None' name='[none:Calculation_1252563653732093958:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[고객명]' derivation='None' name='[none:고객명:nk]' pivot='key' type='nominal' />
+            <column-instance column='[배송 일자]' derivation='None' name='[none:배송 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[주문 번호]' derivation='None' name='[none:주문 번호:nk]' pivot='key' type='nominal' />
+            <column-instance column='[주문 일자]' derivation='None' name='[none:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='string' name='[고객명]' role='dimension' type='nominal' />
+            <column datatype='date' name='[배송 일자]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[주문 번호]' role='dimension' type='nominal' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:Calculation_1252563653732093958:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객명:nk] / ([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:주문 번호:nk] / ([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:주문 일자:ok] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[none:배송 일자:ok])))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{23C267B3-C9C7-4EAF-BD47-C491DB154351}' />
+    </worksheet>
+    <worksheet name='계층 만들기'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[제품 대분류]' derivation='None' name='[none:제품 대분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[제품 중분류]' derivation='None' name='[none:제품 중분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[지역]' derivation='None' name='[none:지역:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[제품 대분류]' role='dimension' type='nominal' />
+            <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+            <column datatype='string' name='[지역]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk])</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:지역:nk]</cols>
+      </table>
+      <simple-id uuid='{FFCE5425-63AC-403E-A838-6322AAEC090C}' />
+    </worksheet>
+    <worksheet name='고객 세그먼트별 연매출'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[고객 세그먼트]' derivation='None' name='[none:고객 세그먼트:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 일자]' derivation='Year' name='[yr:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='string' name='[고객 세그먼트]' role='dimension' type='nominal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]'>
+            <groupfilter function='level-members' level='[yr:주문 일자:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' scope='rows' value='false' />
+            <format attr='display' class='1' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' value='n#,##0,,M;-#,##0,,M' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='cols' value='1' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk] + [federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk])</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]</cols>
+      </table>
+      <simple-id uuid='{E6E69FF4-8B1E-4656-8638-42994A03A6CC}' />
+    </worksheet>
+    <worksheet name='다중 측정값 활용_2017년 매출 vs 2018년 매출'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column caption='2018 매출' datatype='real' name='[2017 매출(복사본)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if year([주문 일자])=2018 then 매출 end' />
+            </column>
+            <column caption='2017 매출' datatype='real' name='[Calculation_1252563653718687748]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if year([주문 일자])=2017 then 매출 end' />
+            </column>
+            <column caption='전년 대비 성장률' datatype='real' default-format='p0.0%' name='[Calculation_1252563653719117829]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(sum([2017 매출(복사본)])-sum([Calculation_1252563653718687748]))/sum([Calculation_1252563653718687748])' />
+            </column>
+            <column-instance column='[주문 일자]' derivation='Month' name='[mn:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[2017 매출(복사본)]' derivation='Sum' name='[sum:2017 매출(복사본):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1252563653718687748]' derivation='Sum' name='[sum:Calculation_1252563653718687748:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1252563653719117829]' derivation='User' name='[usr:Calculation_1252563653719117829:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_1252563653718687748:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:2017 매출(복사본):qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='render-fold-reversed' value='true' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]' palette='red_black_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Multiple Values]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[Multiple Values] + [federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk])</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok]</cols>
+      </table>
+      <simple-id uuid='{EF331B4B-DC1D-4D22-960A-D9BB76FE447A}' />
+    </worksheet>
+    <worksheet name='도구 설명 포함 차트'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[시군구]' derivation='None' name='[none:시군구:nk]' pivot='key' type='nominal' />
+            <column-instance column='[시도]' derivation='None' name='[none:시도:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[시군구]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='string' name='[시도]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시도:nk]'>
+            <groupfilter from='&quot;강원도&quot;' function='range' level='[none:시도:nk]' to='&quot;충청북도&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시도:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Longitude (generated)]' field-type='quantitative' max='15111492.916950421' min='13937978.795602182' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Latitude (generated)]' field-type='quantitative' max='4720878.5257488806' min='3820206.4571992527' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <lod column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시도:nk]' />
+              <lod column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시군구:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;</run>
+                <run bold='true'>Sheet name=&quot;상세차트&quot; maxwidth=&quot;500&quot; maxheight=&quot;500&quot; filter=&quot;&lt;All Fields&gt;&quot;</run>
+                <run bold='true'>&gt;</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#787878'>시도:&#9;</run>
+                <run bold='true'>&lt;[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시도:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>시군구:&#9;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>매출:&#9;</run>
+                <run bold='true'>&lt;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#000000' />
+                <format attr='mark-transparency' value='129' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[Latitude (generated)]</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{849DFB29-B175-4A87-AFAC-F74C691A18D3}' />
+    </worksheet>
+    <worksheet name='도넛차트'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column caption='0' datatype='integer' name='[Calculation_2321042663498280961]' role='measure' type='quantitative' user:unnamed='시트 9'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column-instance column='[고객 세그먼트]' derivation='None' name='[none:고객 세그먼트:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2321042663498280961]' derivation='Sum' name='[sum:Calculation_2321042663498280961:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[고객 세그먼트]' role='dimension' type='nominal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' direction='DESC' using='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]' field-type='quantitative' fold='true' scope='cols' type='space' />
+            <format attr='display' class='1' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]' scope='cols' value='false' />
+            <format attr='display' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' />
+              <wedge-size column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='2.5524861812591553' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk]' x-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>총 매출&#10;</run>
+                <run fontsize='15'>&lt;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>([federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk] + [federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:Calculation_2321042663498280961:qk])</cols>
+      </table>
+      <simple-id uuid='{75F1ECE1-F8C5-461D-B4FB-EF57E5F4563B}' />
+    </worksheet>
+    <worksheet name='매개 변수 차원 선택'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+            <datasource caption='매개 변수' name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='차원 선택' datatype='string' name='[매개 변수 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;지역&quot;'>
+              <calculation class='tableau' formula='&quot;지역&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column caption='차원 선택' datatype='string' name='[Calculation_1252563653733707783]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='case [Parameters].[매개 변수 1]&#13;&#10;when &quot;지역&quot; then [지역]&#13;&#10;when &quot;고객 세그먼트&quot; then [고객 세그먼트]&#13;&#10;when &quot;제품 대분류&quot; then [제품 대분류]&#13;&#10;when &quot;배송 방법&quot; then [배송 방법]&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_1252563653733707783]' derivation='None' name='[none:Calculation_1252563653733707783:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[고객 세그먼트]' role='dimension' type='nominal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[배송 방법]' role='dimension' type='nominal' />
+            <column datatype='string' name='[제품 대분류]' role='dimension' type='nominal' />
+            <column datatype='string' name='[지역]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:Calculation_1252563653733707783:nk]' direction='DESC' using='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='border-color' value='#b0b0b0' />
+            <format attr='border-width' value='1' />
+            <format attr='hnaxis' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:Calculation_1252563653733707783:nk]</cols>
+      </table>
+      <simple-id uuid='{9873BE25-D3AB-42E5-8DF2-A7877758C732}' />
+    </worksheet>
+    <worksheet name='분기별 수익'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[주문 일자]' derivation='Quarter' name='[qr:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[수익]' derivation='Sum' name='[sum:수익:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 일자]' derivation='Year' name='[yr:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[수익]' role='measure' type='quantitative' />
+            <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Action (제품 중분류)]'>
+            <groupfilter function='member' level='[제품 중분류]' member='&quot;탁자&quot;' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[Action (제품 중분류)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='text-align' data-class='subtotal' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[qr:주문 일자:ok]' value='auto' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[qr:주문 일자:ok]' value='center' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='0.0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='14' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[qr:주문 일자:ok]</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]</cols>
+      </table>
+      <simple-id uuid='{D9F07903-A6D2-47D3-BFBA-393AC0780B2A}' />
+    </worksheet>
+    <worksheet name='상세차트'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[제품 대분류]' derivation='None' name='[none:제품 대분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 일자]' derivation='Year' name='[yr:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[시군구]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='string' name='[시도]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='string' name='[제품 대분류]' role='dimension' type='nominal' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Tooltip (시군구,시도)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - 시트 6]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[시군구]' />
+              <groupfilter function='level-members' level='[시도]' />
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' direction='DESC' using='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[Tooltip (시군구,시도)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='color' value='#000000' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]</cols>
+      </table>
+      <simple-id uuid='{293D9981-9C9F-487D-B7FE-7524F38B7583}' />
+    </worksheet>
+    <worksheet name='시트 17'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[Top 10(복사본)]' derivation='InOut' name='[io:Top 10(복사본):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Top 10]' derivation='InOut' name='[io:Top 10:nk]' pivot='key' type='nominal' />
+            <column-instance column='[집합 1]' derivation='InOut' name='[io:집합 1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[고객명]' derivation='None' name='[none:고객명:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[계산2]' derivation='User' name='[usr:계산2:ok:1]' pivot='key' type='ordinal'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column caption='매출 순위' datatype='integer' name='[계산2]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='RANK(SUM([매출]))'>
+                <table-calc ordering-type='ColumnInPane' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[고객명]' role='dimension' type='nominal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객명:nk]' direction='DESC' measure-to-sort-by='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객명:nk] / ([federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:계산2:ok:1] / ([federated.0smajfa0mbpndi1gavzye08oq5xa].[io:Top 10:nk] / ([federated.0smajfa0mbpndi1gavzye08oq5xa].[io:집합 1:nk] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[io:Top 10(복사본):nk]))))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{E1653522-40BE-4B46-90FC-F40F51968751}' />
+    </worksheet>
+    <worksheet name='연월 매출'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[주문 일자]' derivation='Month' name='[mn:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 일자]' derivation='Year' name='[yr:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok]' value='0' />
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok]' value='iL' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <reference-line axis-column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-table' value-column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' z-order='2' />
+            <reference-line axis-column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' enable-instant-analytics='true' formula='average' id='refline1' label-type='automatic' probability='95' scope='per-pane' value-column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='range' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]</rows>
+        <cols>([federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok])</cols>
+      </table>
+      <simple-id uuid='{8A7D87E4-F880-4BF3-849A-4F79C0956417}' />
+    </worksheet>
+    <worksheet name='워드클라우드'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[제품 중분류]' derivation='None' name='[none:제품 중분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[수익]' derivation='Sum' name='[sum:수익:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='real' name='[수익]' role='measure' type='quantitative' />
+            <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' />
+              <size column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C4582EF5-4680-4B14-BB0E-71FEDA9F3D64}' />
+    </worksheet>
+    <worksheet name='제품 대분류별 매출 비율'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[제품 대분류]' derivation='None' name='[none:제품 대분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[pcto:sum:매출:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[제품 대분류]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' />
+              <wedge-size column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <size column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[pcto:sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{EAB1B12E-8D67-416C-9A62-B7BAF74DE54E}' />
+    </worksheet>
+    <worksheet name='제품 중분류별 매출이 가장 많이 나온 달과 적은 달은?'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column caption='avg(1)' datatype='real' name='[Calculation_1252563653660602369]' role='measure' type='quantitative' user:unnamed='시트 11'>
+              <calculation class='tableau' formula='avg(1)' />
+            </column>
+            <column caption='최소 or 최대' datatype='string' name='[Calculation_1252563653660704770]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='if sum(매출)=window_max(sum(매출)) then &apos;최대&apos;&#13;&#10;elseif sum(매출)=window_min(sum(매출)) then &apos;최소&apos;&#13;&#10;else &apos;null&apos;&#13;&#10;end'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[주문 일자]' derivation='Month' name='[mn:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[제품 중분류]' derivation='None' name='[none:제품 중분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1252563653660602369]' derivation='User' name='[usr:Calculation_1252563653660602369:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1252563653660704770]' derivation='User' name='[usr:Calculation_1252563653660704770:nk:2]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660602369:qk]' shelf='rows'>
+              <sort-filter-info>
+                <sort-filter level-name='[federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok]' member-value='4' />
+              </sort-filter-info>
+            </shelf-sort-v2>
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660602369:qk]' field-type='quantitative' max='1.0' min='0.0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660602369:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' value='n#,##0,,M;-#,##0,,M' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660704770:nk:2]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk]</rows>
+        <cols>([federated.0smajfa0mbpndi1gavzye08oq5xa].[mn:주문 일자:ok] * [federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660602369:qk])</cols>
+      </table>
+      <simple-id uuid='{B88F5B0C-80E1-42CF-A71D-6F803E6C156C}' />
+    </worksheet>
+    <worksheet name='총계'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[고객 세그먼트]' derivation='None' name='[none:고객 세그먼트:nk]' pivot='key' type='nominal' />
+            <column-instance column='[지역]' derivation='None' name='[none:지역:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[수량]' derivation='Sum' name='[sum:수량:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[수익]' derivation='Sum' name='[sum:수익:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[고객 세그먼트]' role='dimension' type='nominal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[수량]' role='measure' type='quantitative' />
+            <column datatype='real' name='[수익]' role='measure' type='quantitative' />
+            <column datatype='string' name='[지역]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수량:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수량:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <natural-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:지역:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' value='n#,##0,,.0M;-#,##0,,.0M' />
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' value='n#,##0,,.0M;-#,##0,,.0M' />
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수량:qk]' value='*#,##개' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-style' scope='cols' value='solid' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' scope='cols' value='solid' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='cols' value='2' />
+            <format attr='div-level' scope='rows' value='3' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows onTop='true' total='true'>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:지역:nk]</rows>
+        <cols onLeft='true' total='true'>([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names])</cols>
+        <subtotals>
+          <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]</column>
+          <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:시도:nk]</column>
+          <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:지역:nk]</column>
+        </subtotals>
+      </table>
+      <simple-id uuid='{23F17732-AECA-488E-B549-09D640B5DCA1}' />
+    </worksheet>
+    <worksheet name='캘린더 차트'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[주문 일자]' derivation='Day' name='[dy:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[주문 일자]' derivation='MY' name='[my:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 일자]' derivation='Weekday' name='[wd:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[주문 일자]' derivation='Week' name='[wk:주문 일자:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='date' name='[주문 일자]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[my:주문 일자:ok]'>
+            <groupfilter function='member' level='[my:주문 일자:ok]' member='201806' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[my:주문 일자:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[wd:주문 일자:ok]' value='36' />
+            <format attr='background-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[wk:주문 일자:ok]' value='false' />
+            <format attr='display' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[wd:주문 일자:ok]' value='true' />
+            <format attr='display' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[my:주문 일자:ok]' value='true' />
+            <format attr='text-format' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[wd:주문 일자:ok]' value='ieeeee' />
+            <format attr='font-size' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[wd:주문 일자:ok]' value='14' />
+            <format attr='font-size' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[my:주문 일자:ok]' value='14' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' data-class='subtotal' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[dy:주문 일자:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='right' />
+                <format attr='vertical-align' value='top' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0smajfa0mbpndi1gavzye08oq5xa].[wk:주문 일자:ok]</rows>
+        <cols>([federated.0smajfa0mbpndi1gavzye08oq5xa].[my:주문 일자:ok] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[wd:주문 일자:ok])</cols>
+      </table>
+      <simple-id uuid='{B00115B6-5DE8-4605-ADC8-E22ED95E36FD}' />
+    </worksheet>
+    <worksheet name='퀵테이블'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='주문' name='federated.0smajfa0mbpndi1gavzye08oq5xa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0smajfa0mbpndi1gavzye08oq5xa'>
+            <column-instance column='[제품 대분류]' derivation='None' name='[none:제품 대분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[제품 중분류]' derivation='None' name='[none:제품 중분류:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[rank:sum:매출:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='ColumnInPane' rank-options='Competition,Descending' type='Rank' />
+            </column-instance>
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[계산1]' derivation='User' name='[usr:계산1:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='ColumnInPane' />
+            </column-instance>
+            <column-instance column='[계산2]' derivation='User' name='[usr:계산2:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='ColumnInPane' />
+            </column-instance>
+            <column caption='매출 구성비율' datatype='real' default-format='p0.00%' name='[계산1]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([매출]) / TOTAL(SUM([매출]))'>
+                <table-calc ordering-type='ColumnInPane' />
+              </calculation>
+            </column>
+            <column caption='매출 순위' datatype='integer' name='[계산2]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='RANK(SUM([매출]))'>
+                <table-calc ordering-type='ColumnInPane' />
+              </calculation>
+            </column>
+            <column datatype='real' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[제품 대분류]' role='dimension' type='nominal' />
+            <column datatype='string' name='[제품 중분류]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:계산1:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:계산2:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:계산1:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0smajfa0mbpndi1gavzye08oq5xa].[rank:sum:매출:qk:2]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <computed-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' direction='DESC' using='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+          <computed-sort column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk]' direction='DESC' using='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' />
+          <slices>
+            <column>[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0smajfa0mbpndi1gavzye08oq5xa].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk] / [federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 중분류:nk])</rows>
+        <cols>[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{0A47193B-DB68-4DC3-AB04-A7613DC43538}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='대시보드 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='41875' id='3' name='워드클라우드' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='56125' id='9' name='분기별 수익' w='82400' x='800' y='42875'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='11' is-fixed='true' type='layout-basic' w='16000' x='83200' y='1000'>
+              <zone h='41875' id='6' param='vert' type='layout-flow' w='16000' x='83200' y='1000'>
+                <zone h='8125' id='8' name='워드클라우드' pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='56125' id='12' param='vert' type='layout-flow' w='16000' x='83200' y='42875'>
+                <zone h='8125' id='10' name='분기별 수익' pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' w='16000' x='83200' y='42875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='14' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='41875' id='3' is-fixed='true' name='워드클라우드' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='8' name='워드클라우드' pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='56125' id='9' is-fixed='true' name='분기별 수익' w='82400' x='800' y='42875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='10' name='분기별 수익' pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' w='16000' x='83200' y='42875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{360A829B-A7BE-4250-9946-8E0B77AB82EB}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='연월 매출'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{F815BA0D-7F0C-4536-85AF-55DEA4079AF2}' />
+    </window>
+    <window class='worksheet' name='제품 대분류별 매출 비율'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C052F42C-1D28-40E1-832E-CC130D1496D5}' />
+    </window>
+    <window class='worksheet' name='계층 만들기'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{4B666A9E-5381-423A-808C-83366835DF0C}' />
+    </window>
+    <window class='worksheet' name='캘린더 차트'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{CABEDB33-1D87-4379-A9F6-4BBA5D2A1D78}' />
+    </window>
+    <window class='worksheet' name='도구 설명 포함 차트'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{45B1CB72-AB0E-4AD3-B412-29ABA68C39FB}' />
+    </window>
+    <window class='worksheet' name='상세차트'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:제품 대분류:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{6BD037A1-6889-40A6-81AE-96FC5FB72B3C}' />
+    </window>
+    <window class='worksheet' name='워드클라우드'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C0C9AD14-E874-4AC1-9578-A73503A5A195}' />
+    </window>
+    <window class='worksheet' name='분기별 수익'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:수익:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D101EA12-15F9-4BFA-8031-8FC95A802AF8}' />
+    </window>
+    <window class='dashboard' name='대시보드 1'>
+      <viewpoints>
+        <viewpoint name='분기별 수익'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='워드클라우드'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{9F95F0FE-375D-4829-B8F8-49A09E63A07C}' />
+    </window>
+    <window class='worksheet' name='도넛차트'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{28EEDFCA-69B9-48BE-82B2-9C7A9DD27178}' />
+    </window>
+    <window class='worksheet' name='고객 세그먼트별 연매출'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='1' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[none:고객 세그먼트:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[yr:주문 일자:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{0D533D91-C849-419B-A6E2-C058F1325688}' />
+    </window>
+    <window class='worksheet' name='제품 중분류별 매출이 가장 많이 나온 달과 적은 달은?'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653660704770:nk:2]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DBDFDF66-1BC0-48B6-B67C-70923BBB2F56}' />
+    </window>
+    <window class='worksheet' name='다중 측정값 활용_2017년 매출 vs 2018년 매출'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+            <card pane-specification-id='1' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[:Measure Names]' type='color' />
+            <card pane-specification-id='2' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[usr:Calculation_1252563653719117829:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{72FBFC68-B645-42FA-9ED6-DB13450E5DA1}' />
+    </window>
+    <window class='worksheet' name='퀵테이블'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{57ACFE9F-D877-40EE-942B-0B5059BDDA32}' />
+    </window>
+    <window class='worksheet' name='총계'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{483CA7CD-D9DC-4B37-82B1-41E8A9F73252}' />
+    </window>
+    <window class='worksheet' name='Datediff'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{58F65A53-EB4C-4597-BF4C-6E11FA440397}' />
+    </window>
+    <window class='worksheet' maximized='true' name='매개 변수 차원 선택'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card mode='compact' param='[Parameters].[매개 변수 1]' type='parameter' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0smajfa0mbpndi1gavzye08oq5xa].[sum:매출:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A12854DC-D9E5-4F46-B984-EFC6B1BE434F}' />
+    </window>
+    <window class='worksheet' name='시트 17'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7E4FEC0B-4391-4558-A41C-5C35200EAD33}' />
+    </window>
+  </windows>
+</workbook>
